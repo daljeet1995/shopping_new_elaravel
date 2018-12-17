@@ -83,8 +83,8 @@
 					    <form action="{{ url('/order-place') }}" method="post">
 						   {{ csrf_field() }}
 						     <input type="radio" name="payment_method" value="handcash"> Hand Cash<br/>
-						     <input type="radio" name="payment_method" value="Cart"> Debit Card<br/>
-						     <input type="radio" name="payment_method" value="paypal"> Paypal<br/><br/>
+						     <!-- <input type="radio" name="payment_method" value="Cart"> Debit Card<br/>
+						     <input type="radio" name="payment_method" value="paypal"> Paypal<br/><br/> -->
 						     <input type="submit" value="Done" class="btn btn-success pull-left btn-fyi">
                         </form>
 		</div>

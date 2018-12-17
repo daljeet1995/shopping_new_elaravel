@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2018 at 02:18 PM
+-- Generation Time: Dec 17, 2018 at 09:06 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -93,15 +93,13 @@ CREATE TABLE `tbl_category` (
 --
 
 INSERT INTO `tbl_category` (`category_id`, `category_name`, `category_description`, `publication_status`, `created_at`, `updated_at`) VALUES
-(1, 'Men', 'Mens Product', 1, NULL, NULL),
-(2, 'Women', 'Women Products<span class=\"Apple-tab-span\" style=\"white-space:pre\">	</span>', 1, NULL, NULL),
-(3, 'Child', 'Child Product', 1, NULL, NULL),
-(4, 'Electronics', 'Electronics Product<span class=\"Apple-tab-span\" style=\"white-space:pre\">	</span>', 1, NULL, NULL),
-(5, 'Others', 'Others Products', 1, NULL, NULL),
-(6, 'Sports', 'Sports Products', 1, NULL, NULL),
-(7, 'Laptops', 'Laptops Products', 1, NULL, NULL),
-(8, 'Cloths', '<font face=\"Arial, Verdana\"><span style=\"font-size: 13.3333px;\">Cloths Product</span></font>', 1, NULL, NULL),
-(9, 'Furniture', 'Furniture', 1, NULL, NULL);
+(1, 'Televisions', 'Tv<br>', 1, NULL, NULL),
+(2, 'Camera', 'camera', 1, NULL, NULL),
+(3, 'Mobile', 'Mobile', 1, NULL, NULL),
+(4, 'women', 'women', 1, NULL, NULL),
+(5, 'Men\'s', 'Men', 1, NULL, NULL),
+(6, 'speaker', 'speaker', 1, NULL, NULL),
+(7, 'Furniture', 'furniture', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -126,7 +124,10 @@ CREATE TABLE `tbl_customer` (
 INSERT INTO `tbl_customer` (`customer_id`, `customer_name`, `customer_email`, `password`, `mobile_number`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'admin@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '9871407469', NULL, NULL),
 (2, 'daljeet', 'daljeet@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '9876543212', NULL, NULL),
-(3, 'test', 'test@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '9999999999', NULL, NULL);
+(3, 'test', 'test@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '9999999999', NULL, NULL),
+(4, 'gan', 'gan@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '123456', NULL, NULL),
+(5, 'gan', 'admin@gmail.com', 'd28c0757869cfd936e43d03e10d09567', 'xcvcxv', NULL, NULL),
+(6, 'lalit', 'lalit@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '9876543212', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -148,17 +149,11 @@ CREATE TABLE `tbl_manufacture` (
 --
 
 INSERT INTO `tbl_manufacture` (`manufacture_id`, `manufacture_name`, `manufacture_description`, `publication_status`, `created_at`, `updated_at`) VALUES
-(2, 'Daljeet', '1111111Daljeetfwfffs', 1, NULL, NULL),
-(4, 'Chillor rose', 'womens brand', 1, NULL, NULL),
-(5, 'Apple', 'apple brand are so good', 1, NULL, NULL),
-(6, 'otobi', 'otobi furniture', 1, NULL, NULL),
-(7, 'Samsung', 'this is samsung brand', 1, NULL, NULL),
-(8, 'Intex', 'Intex', 1, NULL, NULL),
-(9, 'postman', 'Postman', 1, NULL, NULL),
-(10, 'Other', 'This is other Project', 1, NULL, NULL),
-(11, 'Shirts', 'This is Shirt Product', 1, NULL, NULL),
-(12, 'Suits', 'THis is ladies Suits<span class=\"Apple-tab-span\" style=\"white-space:pre\">	</span>', 1, NULL, NULL),
-(13, 'Wood Table', 'Wood Table', 1, NULL, NULL);
+(1, 'Electronics', 'electronic<br>', 1, NULL, NULL),
+(2, 'Suits', 'suits', 1, NULL, NULL),
+(3, 'T-shirts', 'shirts', 1, NULL, NULL),
+(4, 'Shoes', 'shoes', 1, NULL, NULL),
+(5, 'Home, Kitchen', 'home', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,7 +178,13 @@ CREATE TABLE `tbl_order` (
 INSERT INTO `tbl_order` (`order_id`, `shipping_id`, `payment_id`, `order_total`, `order_status`, `created_at`, `updated_at`) VALUES
 (1, '25', '1', '25,000.00', 'pending', '2018-12-15 13:02:03', NULL),
 (2, '25', '2', '25,000.00', 'pending', '2018-12-15 13:10:27', NULL),
-(3, '26', '3', '10,000.00', 'pending', '2018-12-15 13:16:53', NULL);
+(3, '26', '3', '10,000.00', 'pending', '2018-12-15 13:16:53', NULL),
+(4, '28', '4', '2,000.00', 'pending', '2018-12-17 05:31:53', NULL),
+(5, '29', '5', '10,000.00', 'pending', '2018-12-17 07:18:25', NULL),
+(6, '29', '6', '0.00', 'pending', '2018-12-17 07:19:13', NULL),
+(7, '29', '7', '0.00', 'pending', '2018-12-17 07:19:19', NULL),
+(8, '29', '8', '0.00', 'pending', '2018-12-17 07:19:40', NULL),
+(9, '29', '9', '0.00', 'pending', '2018-12-17 07:19:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -209,7 +210,9 @@ CREATE TABLE `tbl_order_details` (
 INSERT INTO `tbl_order_details` (`order_details_id`, `order_id`, `product_id`, `product_name`, `product_price`, `product_sales_quantity`, `created_at`, `updated_at`) VALUES
 (1, 1, 8, 'Table', '5000', '5', NULL, NULL),
 (2, 2, 8, 'Table', '5000', '5', NULL, NULL),
-(3, 3, 8, 'Table', '5000', '2', NULL, NULL);
+(3, 3, 8, 'Table', '5000', '2', NULL, NULL),
+(4, 4, 5, 'Ladies', '1000', '2', NULL, NULL),
+(5, 5, 8, 'Table', '5000', '2', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -232,7 +235,13 @@ CREATE TABLE `tbl_payment` (
 INSERT INTO `tbl_payment` (`payment_id`, `payment_method`, `payment_status`, `created_at`, `updated_at`) VALUES
 (1, 'handcash', 'pending', '2018-12-15 13:02:03', NULL),
 (2, 'handcash', 'pending', '2018-12-15 13:10:27', NULL),
-(3, 'handcash', 'pending', '2018-12-15 13:16:53', NULL);
+(3, 'handcash', 'pending', '2018-12-15 13:16:53', NULL),
+(4, 'handcash', 'pending', '2018-12-17 05:31:53', NULL),
+(5, 'handcash', 'pending', '2018-12-17 07:18:25', NULL),
+(6, 'handcash', 'pending', '2018-12-17 07:19:13', NULL),
+(7, 'handcash', 'pending', '2018-12-17 07:19:19', NULL),
+(8, 'handcash', 'pending', '2018-12-17 07:19:40', NULL),
+(9, 'handcash', 'pending', '2018-12-17 07:19:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -267,7 +276,15 @@ INSERT INTO `tbl_products` (`product_id`, `product_name`, `category_id`, `manufa
 (5, 'Ladies', 2, 12, 'This is Ladies Suits', 'This is Another Ladies Suits', '1000', 'image/XD7WQefVsyLFLSZJAMXL.jpg', 'Medium', 'Red', 1, NULL, NULL),
 (6, 'shirts', 1, 11, 'Mens Shirts', 'Mens Shirts', '850', 'image/e6PUstMH1iH7UwCAi6W6.jpg', 'Double XXL', 'Grey', 1, NULL, NULL),
 (7, 'Polo', 1, 11, 'Polo shirts', 'Polo shirts', '760', 'image/KsfDkCbGX4D6oIa2i3fp.jpg', 'XXL', 'Orange', 1, NULL, NULL),
-(8, 'Table', 9, 13, 'Beautifull Wooden Table', 'Beautifull Wooden Table', '5000', 'image/QmGdPLuQVfFGmCHQ64Zt.jpg', '400\'inc', 'Brown, red', 1, NULL, NULL);
+(8, 'Table', 9, 13, 'Beautifull Wooden Table', 'Beautifull Wooden Table', '5000', 'image/QmGdPLuQVfFGmCHQ64Zt.jpg', '400\'inc', 'Brown, red', 1, NULL, NULL),
+(9, 'Sony 80 cm', 1, 1, 'Resolution: HD Ready (1366x768p) | Refresh Rate: 50 hertz\r\nDisplay: Clear Resolution Enhancer\r\nConnectivity: 2 HDMI ports to connect set top box, Blu Ray players, gaming console | 1 USB port to connect hard drives and other USB devices\r\nSound: 20 Watts Output', 'Resolution: HD Ready (1366x768p) | Refresh Rate: 50 hertz\r\nDisplay: Clear Resolution Enhancer\r\nConnectivity: 2 HDMI ports to connect set top box, Blu Ray players, gaming console | 1 USB port to connect hard drives and other USB devices\r\nSound: 20 Watts Output', '20,990.00', 'image/UAiReHuxQfK7OzAMKz8b.jpg', '32 Inches', 'Black', 1, NULL, NULL),
+(10, 'Canon EOS', 2, 1, '9-point AF with 1 centre cross-type AF point\r\nStandard ISO 100 - 6400 (expandable to 12800)\r\nWi-Fi / NFC supported\r\n24.1MP APS-C CMOS sensor', '9-point AF with 1 centre cross-type AF point\r\nStandard ISO 100 - 6400 (expandable to 12800)\r\nWi-Fi / NFC supported\r\n24.1MP APS-C CMOS sensor', '18,990.00', 'image/8JIPgSecbJPmENtq7LJO.jpg', '400\'inc', 'Black', 1, NULL, NULL),
+(11, 'Redmi 6A (Black, 2GBRAM, 16GB Storage)', 3, 1, 'Camera: 13 MP Rear camera | 5 MP front camera\r\nDisplay: 13.84 centimetres (5.45-inch) HD+ display with 1440x720 pixels, 295 pixel density and 18:9 aspect ratio\r\nMemory, Storage & SIM: 2GB RAM | 16GB storage expandable up to 256GB with dedicated slot | Dual nano SIM with dual-standby (4G+4G)', 'Camera: 13 MP Rear camera | 5 MP front camera\r\nDisplay: 13.84 centimetres (5.45-inch) HD+ display with 1440x720 pixels, 295 pixel density and 18:9 aspect ratio\r\nMemory, Storage & SIM: 2GB RAM | 16GB storage expandable up to 256GB with dedicated slot | Dual nano SIM with dual-standby (4G+4G)', '5,999.00', 'image/Hfh33lSzl8qFiDeJCjGC.jpg', '5.45-inch', 'Black', 1, NULL, NULL),
+(12, 'Salwar Suit', 4, 2, 'Care Instructions: Hand wash\r\nMaterial: Cotton\r\nhand wash\r\nEvening wear\r\nNumber of items: 3', 'Care Instructions: Hand wash\r\nMaterial: Cotton\r\nhand wash\r\nEvening wear\r\nNumber of items: 3', '749.00', 'image/MTYEoC10r4NIa1t15WSB.jpg', '5.45-inch', 'Brown, red', 1, NULL, NULL),
+(13, 'Shits', 5, 3, 'Shirts', 'Shirts', '500', 'image/t4pG1fGm5Frr9wWQRWvq.jpg', 'Double XL', 'Brown, red,Green', 1, NULL, NULL),
+(14, 'Maddy Premium', 5, 4, 'Closure Type: Lace-Up; Toe Style: Closed Toe\r\nMaterial: Synthetic Leather', 'Closure Type: Lace-Up; Toe Style: Closed Toe\r\nMaterial: Synthetic Leather', '599.00', 'image/OJKifVGvI5KeyYrxTK7l.jpg', '6,7,8,9', 'Multicolored', 1, NULL, NULL),
+(15, 'Echo', 6, 1, 'Amazon Echo is a hands-free smart speaker that you control using your voice. It connects to Alexa – a cloud based voice service to play music, make calls, check weather and news, set alarms, control smart home devices, and much more.', 'Amazon Echo is a hands-free smart speaker that you control using your voice. It connects to Alexa – a cloud based voice service to play music, make calls, check weather and news, set alarms, control smart home devices, and much more.', '9,999.00', 'image/wgO4LW2Rfjv7fdpGIOjn.jpg', '400\'inc', 'Black', 1, NULL, NULL),
+(16, 'Office Chair', 7, 5, 'Primary Material: Wood | Upholstery Material: Leatherette | Size: High Back | Color: Black & Tan\r\nThe dual color chair enables the chair to fit in easily with your office or home decor & looks very elegant.\r\nThe chair has extra padding on the seat, back and armrests for extra comfort', 'Primary Material: Wood | Upholstery Material: Leatherette | Size: High Back | Color: Black & Tan\r\nThe dual color chair enables the chair to fit in easily with your office or home decor & looks very elegant.\r\nThe chair has extra padding on the seat, back and armrests for extra comfort', '7,990.00', 'image/m6qRn0CvY7FRvdzKv2wE.jpg', '44.5 - 48 In', 'Brown, red', 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -317,7 +334,10 @@ INSERT INTO `tbl_shipping` (`shipping_id`, `shipping_email`, `shipping_first_nam
 (23, 'sfsd@gmail.com', 'dssdf', 'sdfsdf', 'dfss', 'fsdfsd', '123456', NULL, NULL),
 (24, 'assads@gmail.com', 'sdffs', 'dsfs', 'sdfdsf', 'sdfds', 'dfsd', NULL, NULL),
 (25, 'sfsd@gmail.com', 'sdfsd', 'sdfs', 'sdfsds', 'dsfs', 'sdfdf', NULL, NULL),
-(26, 'sfsd@gmail.com', 'dfsdsd', 'dsfds', 'sdfsdf', 'sdfd', 'dsfsd', NULL, NULL);
+(26, 'sfsd@gmail.com', 'dfsdsd', 'dsfds', 'sdfsdf', 'sdfd', 'dsfsd', NULL, NULL),
+(27, 'assads@gmail.com', 'dfsdf', 'sfdsf', 'dfsfsdfsf', 'sfsfsdfsd', 'sdfdsfsdfsd', NULL, NULL),
+(28, 'sfsd@gmail.com', 'dssdf', 'sdfsd', 'fsdsd', '13123132', 'fsdsdfsd', NULL, NULL),
+(29, 'sfsd@gmail.com', 'addas', 'dfsdf', 'asdasa', '13123132', 'sadasd', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -432,49 +452,49 @@ ALTER TABLE `tbl_admin`
 -- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `category_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `customer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `customer_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_manufacture`
 --
 ALTER TABLE `tbl_manufacture`
-  MODIFY `manufacture_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `manufacture_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_order_details`
 --
 ALTER TABLE `tbl_order_details`
-  MODIFY `order_details_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `order_details_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_payment`
 --
 ALTER TABLE `tbl_payment`
-  MODIFY `payment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `payment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tbl_shipping`
 --
 ALTER TABLE `tbl_shipping`
-  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `shipping_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tbl_slider`
